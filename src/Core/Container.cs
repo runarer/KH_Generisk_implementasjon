@@ -14,7 +14,7 @@ public class Container<T> : IStorable<T>
     public bool TryGet(int index, out T? obj)
     {
         obj = default(T);
-        if(index >= Count)
+        if(index < 0 || index >= Count)
             return false;
         obj = Content[index];
         return true;
