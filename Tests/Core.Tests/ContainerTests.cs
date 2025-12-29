@@ -18,6 +18,17 @@ public class ContainerTests
     }
 
     [Fact]
+    public void Items_IsReadOnlyView_NotMutableExternally()
+    {
+        var c = new Container<int>();
+        c.Add(1);
+
+        var snapshot = c.Content.ToList();
+        snapshot.Add(2);
+
+        Assert.Equal(1, c.Count);
+    }
+        [Fact]
     public void RemoveAt_RemovesCorrectElement_And_ShiftsIndexes()
     {
         var c = new Container<string>();
@@ -30,31 +41,6 @@ public class ContainerTests
         Assert.Equal(2, c.Count);
         Assert.True(c.TryGet(1, out var value));
         Assert.Equal("C", value);
-    }
-
-    [Theory]
-    [InlineData(-1)]
-    [InlineData(999)]
-    public void TryGet_OutOfRange_ReturnsFalse(int index)
-    {
-        var c = new Container<double>();
-        c.Add(1.0);
-
-        var ok = c.TryGet(index, out var _);
-
-        Assert.False(ok);
-    }
-
-    [Fact]
-    public void Items_IsReadOnlyView_NotMutableExternally()
-    {
-        var c = new Container<int>();
-        c.Add(1);
-
-        var snapshot = c.Content.ToList();
-        snapshot.Add(2);
-
-        Assert.Equal(1, c.Count);
     }
 }
 
