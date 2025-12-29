@@ -2,12 +2,12 @@ namespace Core;
 
 public class Container<T> : IStorable<T> 
 {
-    private List<T> _content = [];
+    public List<T> Content {get; private set;} = [];
     public int Count {get; private set; } = 0;
-
+    
     public void Add(T obj)
     {
-        _content.Add(obj);
+        Content.Add(obj);
         ++Count;
     }
 
@@ -16,13 +16,13 @@ public class Container<T> : IStorable<T>
         obj = default(T);
         if(index >= Count)
             return false;
-        obj = _content[index];
+        obj = Content[index];
         return true;
     }
 
     public void RemoveAt(int index)
     {
-        _content.RemoveAt(index);
+        Content.RemoveAt(index);
         --Count;
     }
 }
