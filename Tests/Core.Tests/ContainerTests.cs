@@ -1,9 +1,7 @@
-﻿namespace Core.Tests;
-
-using Xunit;
+﻿
+namespace Core.Tests;
 
 public class ContainerTests
-
 {
     [Fact]
     public void Add_IncreasesCount_And_ElementIsRetrievable()
@@ -28,7 +26,7 @@ public class ContainerTests
 
         Assert.Equal(1, c.Count);
     }
-        [Fact]
+    [Fact]
     public void RemoveAt_RemovesCorrectElement_And_ShiftsIndexes()
     {
         var c = new Container<string>();

@@ -1,4 +1,4 @@
-using Core;
+namespace Core.Tests;
 
 public class ComparerTests
 {
@@ -20,8 +20,8 @@ public class ComparerTests
     [InlineData("", "aabb", -1)]
     [InlineData("", "", 0)]
     [InlineData("ab", "ab", 0)]
-    [InlineData("Abe","A43ee", 1)]
-    [InlineData("Abe","", 1)]
+    [InlineData("Abe", "A43ee", 1)]
+    [InlineData("Abe", "", 1)]
     public void Compare_Strings_ReturnsExpectedOrder(string a, string b, int expected)
     {
         var cmp = new Core.Comparer<string>();
