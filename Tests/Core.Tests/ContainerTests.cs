@@ -41,6 +41,15 @@ public class ContainerTests
         Assert.Equal("C", value);
     }
 
+    [Fact]
+    public void RemoveAt_IndexOutOfRange_ThrowsArgumentOutOfRangeException()
+    {
+        var c = new Container<string>();
+
+        Assert.Throws<ArgumentOutOfRangeException>(() => c.RemoveAt(1));
+    }
+
+
     [Theory]
     [InlineData(-1)]
     [InlineData(999)]
