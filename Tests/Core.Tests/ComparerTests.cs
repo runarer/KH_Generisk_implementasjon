@@ -1,4 +1,3 @@
-namespace Core.Tests;
 
 public class ComparerTests
 {

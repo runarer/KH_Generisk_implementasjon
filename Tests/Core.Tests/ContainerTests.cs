@@ -1,5 +1,5 @@
 ﻿
-namespace Core.Tests;
+using Core;
 
 public class ContainerTests
 {

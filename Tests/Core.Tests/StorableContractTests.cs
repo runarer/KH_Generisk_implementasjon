@@ -5,10 +5,10 @@ public class StorableContractTests
     [Fact]
     public void Save_Then_TryLoad_ReturnsSavedItem()
     {
-        IStorable<string> s = new Container<String>();
+        IStorable<string> s = new Container<string>();
 
         s.Add("hello");
-        var ok = s.TryGet(0,out var value);
+        var ok = s.TryGet(0, out var value);
 
         Assert.True(ok);
         Assert.Equal("hello", value);
