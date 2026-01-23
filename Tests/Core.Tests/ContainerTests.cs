@@ -16,7 +16,7 @@ public class ContainerTests
     }
 
     [Fact]
-    public void Items_IsReadOnlyView_NotMutableExternally()
+    public void Content_IsReadOnlyView_NotMutableExternally()
     {
         var c = new Container<int>();
         c.Add(1);
