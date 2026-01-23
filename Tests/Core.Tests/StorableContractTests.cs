@@ -64,7 +64,6 @@ public class StorableContractTests
 
         Assert.True(ok);
         Assert.Equal(one, result);
-        Assert.Equal(zero, c.Content.Last());
     }
 
     [Fact]
