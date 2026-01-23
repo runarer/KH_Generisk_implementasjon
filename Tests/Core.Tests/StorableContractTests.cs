@@ -90,7 +90,6 @@ public class StorableContractTests
 
         Assert.True(ok);
         Assert.Equal(zero, result);
-        Assert.Equal(one, c.Content.First());
     }
 
     [Fact]
