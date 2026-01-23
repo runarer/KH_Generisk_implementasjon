@@ -2,8 +2,19 @@ using Core;
 
 public class StorableContractTests
 {
+
     [Fact]
-    public void Save_Then_TryLoad_ReturnsSavedItem()
+    public void Add_AddsItem_ItemInStorage()
+    {
+        var c = new Container<int>();
+
+        c.Add(42);
+
+        Assert.Contains(42, c.Content);
+    }
+
+    [Fact]
+    public void TryGet_AddsItemTheTryToRetiveItem_ReturnsSavedItem()
     {
         IStorable<string> s = new Container<string>();
 
@@ -42,7 +53,7 @@ public class StorableContractTests
     }
 
     [Fact]
-    public void TryGetLast_ReturnsLastElementAndTrue_AndSetLastToPreviousElement()
+    public void TryGetLast_AddsTwoElements_ReturnsLastElementAndTrue()
     {
         var c = new Container<string>();
         string zero = "Index Zero";
@@ -68,7 +79,7 @@ public class StorableContractTests
     }
 
     [Fact]
-    public void TryGetFirst_ReturnsFirstElementAndTrue_AndSeFirstToNextElement()
+    public void TryGetFirst_AddsTwoElements_ReturnsFirstElementAndTrue()
     {
         var c = new Container<string>();
         string zero = "Index Zero";
