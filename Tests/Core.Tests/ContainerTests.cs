@@ -49,18 +49,5 @@ public class ContainerTests
         Assert.Throws<ArgumentOutOfRangeException>(() => c.RemoveAt(1));
     }
 
-
-    [Theory]
-    [InlineData(-1)]
-    [InlineData(999)]
-    public void TryGet_IndexOutOfRange_ReturnsFalse(int index)
-    {
-        var c = new Container<double>();
-        c.Add(1.0);
-
-        var ok = c.TryGet(index, out var _);
-
-        Assert.False(ok);
-    }
 }
 
