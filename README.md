@@ -1,7 +1,5 @@
 # KH_Generisk_implementasjon
 
-Oppgave 1
-
 ## Oppgave uke 1
 
 ### Del 1 - Generisk klasse
