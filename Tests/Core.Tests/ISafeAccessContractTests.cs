@@ -1,5 +1,5 @@
 using Core;
-public class IContainerContractTests
+public class ISafeAccessContractTests
 {
     [Fact]
     public void RemoveAt_RemovesCorrectElement_AndShiftsNextElement()
@@ -18,7 +18,7 @@ public class IContainerContractTests
     [Fact]
     public void TryGet_AddsItemTheTryToRetiveItem_ReturnsSavedItem()
     {
-        IContainer<string> c = new Container<string>();
+        var c = new Container<string>();
 
         c.Add("hello");
         var ok = c.TryGet(0, out var value);

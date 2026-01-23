@@ -1,11 +1,7 @@
 namespace Core;
 
-public interface IStorable<T>
+public interface ISafeAccess<T>
 {
-    public void Add(T obj);
-
-    public void RemoveAt(int index);
-
     public bool TryGet(int index, out T? obj);
 
     public bool TryGetLast(out T? obj);

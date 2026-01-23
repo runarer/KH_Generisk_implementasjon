@@ -1,6 +1,6 @@
 namespace Core;
 
-public class Container<T> : IStorable<T>
+public class Container<T> : ISafeAccess<T>
 {
     public List<T> Content { get; private set; } = [];
     public int Count { get; private set; } = 0;
