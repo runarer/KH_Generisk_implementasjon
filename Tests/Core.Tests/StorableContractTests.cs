@@ -1,5 +1,4 @@
 using Core;
-
 public class StorableContractTests
 {
 
@@ -16,10 +15,10 @@ public class StorableContractTests
     [Fact]
     public void TryGet_AddsItemTheTryToRetiveItem_ReturnsSavedItem()
     {
-        IStorable<string> s = new Container<string>();
+        IStorable<string> c = new Container<string>();
 
-        s.Add("hello");
-        var ok = s.TryGet(0, out var value);
+        c.Add("hello");
+        var ok = c.TryGet(0, out var value);
 
         Assert.True(ok);
         Assert.Equal("hello", value);
