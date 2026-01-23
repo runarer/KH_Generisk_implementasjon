@@ -26,18 +26,21 @@ public class Container<T> : IStorable<T>
         --Count;
     }
 
-    public bool GetLast(out T? obj)
-    {
-        throw new NotImplementedException();
-    }
-
     public bool TryGetFirst(out T? obj)
     {
-        throw new NotImplementedException();
+        obj = default;
+        if (Count == 0)
+            return false;
+        obj = Content[0];
+        return true;
     }
 
     public bool TryGetLast(out T? obj)
     {
-        throw new NotImplementedException();
+        obj = default;
+        if (Count == 0)
+            return false;
+        obj = Content.Last();
+        return true;
     }
 }
