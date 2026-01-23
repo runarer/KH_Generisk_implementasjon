@@ -25,4 +25,19 @@ public class Container<T> : IStorable<T>
         Content.RemoveAt(index);
         --Count;
     }
+
+    public bool GetLast(out T? obj)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool TryGetFirst(out T? obj)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool TryGetLast(out T? obj)
+    {
+        throw new NotImplementedException();
+    }
 }
